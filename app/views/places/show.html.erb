@@ -1,24 +1,15 @@
-<h1><%= @place["name"] %></h1>
-
-<h2>My Posts</h2>
+<h1> My activities in <%= @place["name"] %></h1>
 
 <div class="row">
-    <% for post in @posts %>
-      <div class="col-s-4">
-        
-          <h3><%= post["title"] %></h3>
-          <%= post["posted_on"] %>
-          <p><%= post["description"] %></p>
-          <img src="<% post["image"] %>" class="img-fluid">
-
-        <% end %>
-        
-
-          <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-info">New Post</a>
-        </p>
-
-        <p>
-          <a href="/places" class="btn btn-primary">Back to All Places</a>
-        </p>
-      </div>
+  <% for post in @posts %>
+    <div class="col-md-3 col-sm-6">
+      <h4><%= post["title"] %></h4>
+      <%= post["posted_on"] %>
+      <p><%= post["description"] %></p>
+      <img src="<% post["image"] %>" class="img-fluid">
+    </div>
+  <% end %>
+      
 </div>
+<p><a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-info">New Post</a></p>
+<p><a href="/places" class="btn btn-primary">Back to All Places</a></p>
