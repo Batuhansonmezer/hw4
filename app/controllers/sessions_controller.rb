@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
       flash["notice"] = "user doesn't exist"
       redirect_to "/login"
     end
+    
   end
 
   def destroy
