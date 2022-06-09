@@ -24,9 +24,12 @@
             </li>
           </ul> 
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item"> <a href="/logout" class = "btn btn-default" >Logout</a></li>
-              <li class="nav-item"> <a href="/login"class = "btn btn-default">Login</a></li>
-              <li class="nav-item"> <a href="/users/new"class = "btn btn-default">Signup</a></li>
+              <% if @current_user %>
+                <li class="nav-item"> <a href="/logout" class = "btn btn-default" >Logout</a></li>
+              <% else %>
+                <li class="nav-item"> <a href="/login"class = "btn btn-default">Login</a></li>
+                <li class="nav-item"> <a href="/users/new"class = "btn btn-default">Signup</a></li>
+              <% end %>
             </ul>    
           </ul>
         </div>
